@@ -127,6 +127,8 @@ fit %>%
   broom::tidy()
 ```
 
+## stratification
+
 fit models by borough
 ```{r}
 nyc_airbnb %>% 
@@ -137,6 +139,7 @@ nyc_airbnb %>%
     results = map(models, broom::tidy)
   ) %>% 
   select(borough, results) %>% 
-  unnest()
+  unnest(results)
 ```
+
 
